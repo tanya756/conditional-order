@@ -1,8 +1,8 @@
-// ========= vue版 slick function ==============================================================================================================================
-var slickFunction = {
+// ========= vue版  function ==============================================================================================================================
+var Function = {
     data() {
         return {
-            slickOptions: {
+            Options: {
 				slidesToShow: 4,
 				slidesToScroll: 4,
                 autoplay: true,
@@ -33,60 +33,60 @@ var slickFunction = {
     },
     methods: {
         next() {
-            this.$refs.slick.next();
+            this.$refs..next();
         },
 
         prev() {
-            this.$refs.slick.prev();
+            this.$refs..prev();
         },
 
         reInit() {
             // Helpful if you have to deal with v-for to update dynamic lists
             this.$nextTick(() => {
-                this.$refs.slick.reSlick();
+                this.$refs..re();
             });
         },
 
         // Events listeners
-        handleAfterChange(event, slick, currentSlide) {
-            // console.log('handleAfterChange', event, slick, currentSlide);
+        handleAfterChange(event, , currentSlide) {
+            // console.log('handleAfterChange', event, , currentSlide);
         },
-        handleBeforeChange(event, slick, currentSlide, nextSlide) {
-            // console.log('handleBeforeChange', event, slick, currentSlide, nextSlide);
+        handleBeforeChange(event, , currentSlide, nextSlide) {
+            // console.log('handleBeforeChange', event, , currentSlide, nextSlide);
         },
-        handleBreakpoint(event, slick, breakpoint) {
-            // console.log('handleBreakpoint', event, slick, breakpoint);
+        handleBreakpoint(event, , breakpoint) {
+            // console.log('handleBreakpoint', event, , breakpoint);
         },
-        handleDestroy(event, slick) {
-            // console.log('handleDestroy', event, slick);
+        handleDestroy(event, ) {
+            // console.log('handleDestroy', event, );
         },
-        handleEdge(event, slick, direction) {
-            // console.log('handleEdge', event, slick, direction);
+        handleEdge(event, , direction) {
+            // console.log('handleEdge', event, , direction);
         },
-        handleInit(event, slick) {
-            // console.log('handleInit', event, slick);
+        handleInit(event, ) {
+            // console.log('handleInit', event, );
         },
-        handleReInit(event, slick) {
-            // console.log('handleReInit', event, slick);
+        handleReInit(event, ) {
+            // console.log('handleReInit', event, );
         },
-        handleSetPosition(event, slick) {
-            // console.log('handleSetPosition', event, slick);
+        handleSetPosition(event, ) {
+            // console.log('handleSetPosition', event, );
         },
-        handleSwipe(event, slick, direction) {
-            // console.log('handleSwipe', event, slick, direction);
+        handleSwipe(event, , direction) {
+            // console.log('handleSwipe', event, , direction);
         },
-        handleLazyLoaded(event, slick, image, imageSource) {
-            // console.log('handleLazyLoaded', event, slick, image, imageSource);
+        handleLazyLoaded(event, , image, imageSource) {
+            // console.log('handleLazyLoaded', event, , image, imageSource);
         },
-        handleLazeLoadError(event, slick, image, imageSource) {
-            // console.log('handleLazeLoadError', event, slick, image, imageSource);
+        handleLazeLoadError(event, , image, imageSource) {
+            // console.log('handleLazeLoadError', event, , image, imageSource);
         },
     },
 };
 
 // ========= app ==============================================================================================================================
 const app = Vue.createApp({
-    mixins: [slickFunction],
+    mixins: [Function],
     data(){
         return{
             name: "凱基證券",
@@ -516,8 +516,8 @@ app.component("modal", {
     },
 });
 
-// ========= vue版 slick ==============================================================================================================================
-app.component("slick", {
+// ========= vue版  ==============================================================================================================================
+app.component("", {
     props: {
         options: {
             type: Object,
@@ -530,115 +530,115 @@ app.component("slick", {
         this.create();
     },
     destroyed: function () {
-        $(this.$el).slick("unslick");
+        $(this.$el).("un");
     },
     methods: {
         create: function () {
-            const $slick = $(this.$el);
-            $slick.on("after-change", this.onAfterChange);
-            $slick.on("before-change", this.onBeforeChange);
-            $slick.on("breakpoint", this.onBreakpoint);
-            $slick.on("destroy", this.onDestroy);
-            $slick.on("edge", this.onEdge);
-            $slick.on("init", this.onInit);
-            $slick.on("reInit", this.onReInit);
-            $slick.on("set-position", this.onSetPosition);
-            $slick.on("swipe", this.onSwipe);
-            $slick.on("lazyLoaded", this.onLazyLoaded);
-            $slick.on("lazyLoadError", this.onLazyLoadError);
-            $slick.slick(this.options);
+            const $ = $(this.$el);
+            $.on("after-change", this.onAfterChange);
+            $.on("before-change", this.onBeforeChange);
+            $.on("breakpoint", this.onBreakpoint);
+            $.on("destroy", this.onDestroy);
+            $.on("edge", this.onEdge);
+            $.on("init", this.onInit);
+            $.on("reInit", this.onReInit);
+            $.on("set-position", this.onSetPosition);
+            $.on("swipe", this.onSwipe);
+            $.on("lazyLoaded", this.onLazyLoaded);
+            $.on("lazyLoadError", this.onLazyLoadError);
+            $.(this.options);
         },
         destroy: function () {
-            const $slick = $(this.$el);
-            $slick.off("after-change", this.onAfterChange);
-            $slick.off("before-change", this.onBeforeChange);
-            $slick.off("breakpoint", this.onBreakpoint);
-            $slick.off("destroy", this.onDestroy);
-            $slick.off("edge", this.onEdge);
-            $slick.off("init", this.onInit);
-            $slick.off("reInit", this.onReInit);
-            $slick.off("set-position", this.onSetPosition);
-            $slick.off("swipe", this.onSwipe);
-            $slick.off("lazyLoaded", this.onLazyLoaded);
-            $slick.off("lazyLoadError", this.onLazyLoadError);
-            $(this.$el).slick("unslick");
+            const $ = $(this.$el);
+            $.off("after-change", this.onAfterChange);
+            $.off("before-change", this.onBeforeChange);
+            $.off("breakpoint", this.onBreakpoint);
+            $.off("destroy", this.onDestroy);
+            $.off("edge", this.onEdge);
+            $.off("init", this.onInit);
+            $.off("reInit", this.onReInit);
+            $.off("set-position", this.onSetPosition);
+            $.off("swipe", this.onSwipe);
+            $.off("lazyLoaded", this.onLazyLoaded);
+            $.off("lazyLoadError", this.onLazyLoadError);
+            $(this.$el).("un");
         },
-        reSlick: function () {
+        re: function () {
             this.destroy();
             this.create();
         },
         next: function () {
-            $(this.$el).slick("slickNext");
+            $(this.$el).("Next");
         },
         prev: function () {
-            $(this.$el).slick("slickPrev");
+            $(this.$el).("Prev");
         },
         pause: function () {
-            $(this.$el).slick("slickPause");
+            $(this.$el).("Pause");
         },
         play: function () {
-            $(this.$el).slick("slickPlay");
+            $(this.$el).("Play");
         },
         goTo: function (index, dontAnimate) {
-            $(this.$el).slick("slickGoTo", index, dontAnimate);
+            $(this.$el).("GoTo", index, dontAnimate);
         },
         currentSlide: function () {
-            return $(this.$el).slick("slickCurrentSlide");
+            return $(this.$el).("CurrentSlide");
         },
         add: function (element, index, addBefore) {
-            $(this.$el).slick("slickAdd", element, index, addBefore);
+            $(this.$el).("Add", element, index, addBefore);
         },
         remove: function (index, removeBefore) {
-            $(this.$el).slick("slickRemove", index, removeBefore);
+            $(this.$el).("Remove", index, removeBefore);
         },
         filter: function (filterData) {
-            $(this.$el).slick("slickFilter", filterData);
+            $(this.$el).("Filter", filterData);
         },
         unfilter: function () {
-            $(this.$el).slick("slickUnfilter");
+            $(this.$el).("Unfilter");
         },
         getOption: function (option) {
-            $(this.$el).slick("slickGetOption", option);
+            $(this.$el).("GetOption", option);
         },
         setOption: function (option, value, refresh) {
-            $(this.$el).slick("slickSetOption", option, value, refresh);
+            $(this.$el).("SetOption", option, value, refresh);
         },
         setPosition: function () {
-            $(this.$el).slick("set-position");
+            $(this.$el).("set-position");
         },
         // Events
-        onAfterChange: function (event, slick, currentSlide) {
-            this.$emit("after-change", event, slick, currentSlide);
+        onAfterChange: function (event, , currentSlide) {
+            this.$emit("after-change", event, , currentSlide);
         },
-        onBeforeChange: function (event, slick, currentSlide, nextSlide) {
-            this.$emit("before-change", event, slick, currentSlide, nextSlide);
+        onBeforeChange: function (event, , currentSlide, nextSlide) {
+            this.$emit("before-change", event, , currentSlide, nextSlide);
         },
-        onBreakpoint: function (event, slick, breakpoint) {
-            this.$emit("breakpoint", event, slick, breakpoint);
+        onBreakpoint: function (event, , breakpoint) {
+            this.$emit("breakpoint", event, , breakpoint);
         },
-        onDestroy: function (event, slick) {
-            this.$emit("destroy", event, slick);
+        onDestroy: function (event, ) {
+            this.$emit("destroy", event, );
         },
-        onEdge: function (event, slick, direction) {
-            this.$emit("edge", event, slick, direction);
+        onEdge: function (event, , direction) {
+            this.$emit("edge", event, , direction);
         },
-        onInit: function (event, slick) {
-            this.$emit("init", event, slick);
+        onInit: function (event, ) {
+            this.$emit("init", event, );
         },
-        onReInit: function (event, slick) {
-            this.$emit("reInit", event, slick);
+        onReInit: function (event, ) {
+            this.$emit("reInit", event, );
         },
-        onSetPosition: function (event, slick) {
-            this.$emit("set-position", event, slick);
+        onSetPosition: function (event, ) {
+            this.$emit("set-position", event, );
         },
-        onSwipe: function (event, slick, direction) {
-            this.$emit("swipe", event, slick, direction);
+        onSwipe: function (event, , direction) {
+            this.$emit("swipe", event, , direction);
         },
-        onLazyLoaded: function (event, slick, image, imageSource) {
-            this.$emit("lazyLoaded", event, slick, image, imageSource);
+        onLazyLoaded: function (event, , image, imageSource) {
+            this.$emit("lazyLoaded", event, , image, imageSource);
         },
-        onLazyLoadError: function (event, slick, image, imageSource) {
-            this.$emit("lazyLoadError", event, slick, image, imageSource);
+        onLazyLoadError: function (event, , image, imageSource) {
+            this.$emit("lazyLoadError", event, , image, imageSource);
         },
     },
     template: ` <div>
